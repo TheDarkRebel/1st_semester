@@ -1,0 +1,75 @@
+//1
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "RUS");
+	int a, b, c;
+	double x;
+	cout << "Введите a - "; cin >> a; //Первое число
+	cout << "Введите b - "; cin >> b; //Второе число
+	cout << "Введите c - "; cin >> c; //Третье число
+	x = pow(a * b * c, 1.0 / 3);   //Вычисление среднего арифметического
+	cout << "Дробная часть - " << (x - int(x)) << "\n";
+	return 0;
+}
+
+//2
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "RUS");
+	bool a;
+	double x, y;
+	cout << "Введите координаты точки x и y \n";
+	cout << "Введите х: \n";
+	cin >> x;					//Ввод координаты х
+	cout << "Введите y: \n";
+	cin >> y;					//Ввод координаты у
+	if (((0 <= y and y <= 1) and (-2 <= x and x <= 0)) or (y == 1 - x) or (y == -1 + x)) {			//Проверка на вхождение в область
+		a = true;
+		cout << boolalpha << a;
+	}
+	else {
+		a = false;
+		cout << boolalpha << a;
+	}
+	return 0;
+}
+
+//7
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+double func(double a, int m) {
+	if (m < 0) {                             //n меньше нуля
+		cout << (1 / pow(a, -m));
+		return 0;
+	}
+	if (m > 0) {									 //n больше нуля
+		cout << (pow(a, 2 * m));
+		return 0;
+	}
+	if (m == 0) {								 //n равен нулю
+		cout << 1;
+		return 0;
+	}
+}
+
+int main() {
+	setlocale(LC_ALL, "RUS");
+	cout << "Введите значения x и n\n";
+	double x;
+	int n;
+	cout << "Введите х: \n";
+	cin >> x;						//Ввод первого числа
+	cout << "Введите n: \n";
+	cin >> n;							//Ввод второго числа
+	func(x, n);
+	return 0;
+}
